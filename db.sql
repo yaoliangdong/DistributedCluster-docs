@@ -17,6 +17,7 @@ CREATE TABLE `sys_user` (
   PRIMARY KEY (`id`)
 ) ENGINE=ndb DEFAULT CHARSET=utf8 COMMENT='系统用户表';
 insert into sys_user values(REPLACE(UUID(),'-',''),'系统管理员','admin','123456');
+insert into sys_user values(REPLACE(UUID(),'-',''),'张三','zhangsan','123456');
 
 drop table if exists `sys_menu`;
 CREATE TABLE `sys_menu` (
@@ -31,5 +32,5 @@ CREATE TABLE `sys_menu` (
 ) ENGINE=ndb DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 insert into sys_menu values(REPLACE(UUID(),'-',''),'base-data','基础数据系统','base-data.cluster.com','80','/base-data-web','1');
-insert into sys_menu values(REPLACE(UUID(),'-',''),'oms','订单系统','oms.cluster.com','8040','/oms-web','3');
-insert into sys_menu values(REPLACE(UUID(),'-',''),'wms','仓储系统','wms.cluster.com','8050','/wms-web','4');
+insert into sys_menu values(REPLACE(UUID(),'-',''),'oms','订单系统','oms.cluster.com','8040','/oms-web','2');
+insert into sys_menu values(REPLACE(UUID(),'-',''),'wms','仓储系统','wms.cluster.com','8050','/wms-web','3');
