@@ -4,9 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <welcome-file-list>
-		<welcome-file>index.do</welcome-file>
-  </welcome-file-list>
+  <context-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>classpath:spring-mybatis.xml</param-value>  
+   </context-param>
   	
   	<!-- ======================== 单点登录结束 ======================== -->    
    <!-- 用于单点退出，该过滤器用于实现单点登出功能，可选配置 -->    
@@ -85,6 +86,12 @@
    <!-- ======================== 单点登录结束 ======================== -->
   
   
+    
+    <!-- Spring监听器 -->  
+    <listener>  
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+    </listener> 
+    
     <!-- Spring MVC -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>

@@ -11,6 +11,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring.version>4.1.4.RELEASE</spring.version>
     <cas.client.core.version>3.2.1-RELEASE</cas.client.core.version>
+    <mybatis.version>3.2.8</mybatis.version>
+    <mybatis.spring.version>1.2.2</mybatis.spring.version>
+    <druid.version>1.0.27</druid.version>
+    <mysql.drive.version>5.1.40</mysql.drive.version>
   </properties>
   
   <distributionManagement>
@@ -33,11 +37,38 @@
 				<artifactId>spring-web</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 			<!-- CAS Client -->
 			<dependency>
 				<groupId>org.jasig.cas.client</groupId>
 				<artifactId>cas-client-core</artifactId>
 				<version>${cas.client.core.version}</version>
+			</dependency>
+			<!-- mybatis -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis.spring.version}</version>
+			</dependency>
+			<!-- connection pool -->
+			<dependency>
+			     <groupId>com.alibaba</groupId>
+			     <artifactId>druid</artifactId>
+			     <version>${druid.version}</version>
+			</dependency>
+			<dependency>
+		         <groupId>mysql</groupId>
+		         <artifactId>mysql-connector-java</artifactId>
+		         <version>${mysql.drive.version}</version>
 			</dependency>
 			<!-- <dependency>
 				<groupId>org.springframework</groupId>

@@ -1,6 +1,7 @@
 package com.cluster.wms.controller;
 
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.jasig.cas.client.authentication.AttributePrincipal;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cluster.wms.mapper.DaoTestMapper;
 
 /**
  * cas登录与注销测试
@@ -21,6 +25,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/casTest")
 public class CasTestController {
+	
+	@Autowired
+	private DaoTestMapper daoTestMapper;
 	
 
 	/**
@@ -39,7 +46,10 @@ public class CasTestController {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
+			List<Map> list = daoTestMapper.selectTest();
+			
 			out.print("<h1>welcome,"+principal.getName()+","+name+"</h1>");
+			out.print(list);
 			out.print("<a href='logout.do'><h1>logout...</h1></a>");
 			out.close();
 		} catch (Exception e) {
