@@ -9,12 +9,14 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>4.1.4.RELEASE</spring.version>
+    <spring.version>4.2.6.RELEASE</spring.version>
     <cas.client.core.version>3.2.1-RELEASE</cas.client.core.version>
     <mybatis.version>3.2.8</mybatis.version>
     <mybatis.spring.version>1.2.2</mybatis.spring.version>
     <druid.version>1.0.27</druid.version>
     <mysql.drive.version>5.1.40</mysql.drive.version>
+    <spring.data.redis.version>1.7.2.RELEASE</spring.data.redis.version>
+	<redis.client.version>2.9.0</redis.client.version>
   </properties>
   
   <distributionManagement>
@@ -59,7 +61,7 @@
 				<artifactId>mybatis-spring</artifactId>
 				<version>${mybatis.spring.version}</version>
 			</dependency>
-			<!-- connection pool -->
+			<!-- ali connection pool -->
 			<dependency>
 			     <groupId>com.alibaba</groupId>
 			     <artifactId>druid</artifactId>
@@ -69,6 +71,17 @@
 		         <groupId>mysql</groupId>
 		         <artifactId>mysql-connector-java</artifactId>
 		         <version>${mysql.drive.version}</version>
+			</dependency>
+			<!-- redis -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>${spring.data.redis.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${redis.client.version}</version>
 			</dependency>
 			<!-- <dependency>
 				<groupId>org.springframework</groupId>
