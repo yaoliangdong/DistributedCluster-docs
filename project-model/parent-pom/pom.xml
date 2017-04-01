@@ -15,7 +15,8 @@
     <mybatis.spring.version>1.2.2</mybatis.spring.version>
     <druid.version>1.0.27</druid.version>
     <mysql.drive.version>5.1.40</mysql.drive.version>
-    <spring.data.redis.version>1.7.2.RELEASE</spring.data.redis.version>
+    <!-- spring 1.8.1 版本才支持redis集群 密码验证  -->
+    <spring.data.redis.version>1.8.1.RELEASE</spring.data.redis.version>
 	<redis.client.version>2.9.0</redis.client.version>
   </properties>
   

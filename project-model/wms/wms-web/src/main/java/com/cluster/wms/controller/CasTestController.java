@@ -1,6 +1,7 @@
 package com.cluster.wms.controller;
 
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +31,10 @@ public class CasTestController {
 	@Autowired
 	private DaoTestMapper daoTestMapper;
 	
-
+	
+	@Autowired
+	private RedisTemplate<Serializable,Object> redisTemplate;
+	
 	/**
 	 * 登录成功页
 	 * @author  liangdong.yao
@@ -45,11 +50,15 @@ public class CasTestController {
 			response.setCharacterEncoding("utf-8");
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
-			
-			List<Map> list = daoTestMapper.selectTest();
+			//db连接测试
+			List<Map> dbTest = daoTestMapper.selectTest();
+			//redis集群连接测试
+			redisTemplate.opsForValue().setIfAbsent("testKey", "testValue");
+			String redisTest = (String) redisTemplate.opsForValue().get("testKey");
 			
 			out.print("<h1>welcome,"+principal.getName()+","+name+"</h1>");
-			out.print(list);
+			out.print("test db connection:"+dbTest);
+			out.print("<br />test redis connection:"+redisTest);
 			out.print("<a href='logout.do'><h1>logout...</h1></a>");
 			out.close();
 		} catch (Exception e) {
