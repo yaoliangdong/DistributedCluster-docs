@@ -57,8 +57,8 @@ public class CasTestController {
 			String redisTest = (String) redisTemplate.opsForValue().get("testKey");
 			
 			out.print("<h1>welcome,"+principal.getName()+","+name+"</h1>");
-			out.print("test db connection:"+dbTest);
-			out.print("<br />test redis connection:"+redisTest);
+			out.print("get data from db:"+dbTest);
+			out.print("<br />get data from redis:"+redisTest);
 			out.print("<a href='logout.do'><h1>logout...</h1></a>");
 			out.close();
 		} catch (Exception e) {
