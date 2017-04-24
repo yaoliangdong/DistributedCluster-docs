@@ -27,10 +27,11 @@ CREATE TABLE `sys_menu` (
   `domain` varchar(200) DEFAULT NULL COMMENT '系统域名',
   `port` varchar(100) DEFAULT NULL COMMENT '系统端口号',
   `path` varchar(200) DEFAULT NULL COMMENT '系统web路径',
+  `href` varchar(200) DEFAULT NULL COMMENT '链接',
   `sort` int DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
 ) ENGINE=ndb DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
-insert into sys_menu values(REPLACE(UUID(),'-',''),'base-data','基础数据系统','base-data.cluster.com','80','/base-data-web','1');
-insert into sys_menu values(REPLACE(UUID(),'-',''),'oms','订单系统','oms.cluster.com','8040','/oms-web','2');
-insert into sys_menu values(REPLACE(UUID(),'-',''),'wms','仓储系统','wms.cluster.com','8050','/wms-web','3');
+insert into sys_menu values(REPLACE(UUID(),'-',''),'base-data','基础数据系统','base-data.cluster.com','80','/base-data-web','/list.do','1');
+insert into sys_menu values(REPLACE(UUID(),'-',''),'oms','订单系统','oms.cluster.com','8040','/oms-web','/list.do','2');
+insert into sys_menu values(REPLACE(UUID(),'-',''),'wms','仓储系统','wms.cluster.com','8050','/wms-web','/list.do','3');

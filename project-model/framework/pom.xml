@@ -69,6 +69,32 @@
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 		</dependency>
+		<!-- gson -->
+		<dependency>
+    		<groupId>com.google.code.gson</groupId>
+    		<artifactId>gson</artifactId>
+		</dependency>
+		<!-- dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+		</dependency>
+		<!-- zookeeper -->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+		<!-- zookeeper client -->
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+		
+		<dependency>
+	      <groupId>com.cluster.base-data.api</groupId>
+	  	  <artifactId>base-data-api</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+    	</dependency>
 		<!-- <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -94,5 +120,12 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency> -->
   </dependencies>
-  
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-antrun-plugin</artifactId>
+		</plugin>
+	</plugins>
+  </build>
 </project>

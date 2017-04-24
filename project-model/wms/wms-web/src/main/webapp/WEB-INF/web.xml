@@ -9,6 +9,7 @@
         <param-value>
         	classpath:spring-mybatis.xml
         	classpath:applicationContext-redis.xml
+        	classpath:spring-dubbo-consumer.xml
         </param-value>  
    </context-param>
   	

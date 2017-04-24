@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>com.cluster</groupId>
+  	<artifactId>parent-pom</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<relativePath>../parent-pom/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.cluster.parent-web</groupId>
+  <artifactId>parent-web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>Maven</name>
+  <url>http://maven.apache.org/</url>
+  <inceptionYear>2001</inceptionYear>
+
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.cluster.framework</groupId>
+  	  <artifactId>framework</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- web -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+	<!-- jstl -->
+	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	</dependency>
+    
+  </dependencies>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <locales>en,fr</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

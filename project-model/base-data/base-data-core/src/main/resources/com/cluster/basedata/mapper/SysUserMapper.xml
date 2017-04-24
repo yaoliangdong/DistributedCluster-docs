@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cluster.basedata.mapper.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.cluster.basedata.model.SysUser" >
+    <id column="id" property="id" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="login_name" property="loginName" jdbcType="CHAR" />
+    <result column="pass" property="pass" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t.id, t.name, t.login_name, t.pass
+  </sql>
+  <sql id="condition" >
+    <if test="null!=params" >
+      <if test="params.id != null and '' != params.id" >
+        and t.id = #{params.id,jdbcType=CHAR}
+      </if>
+      <if test="params.name != null and '' != params.name" >
+        and t.name = #{params.name,jdbcType=CHAR}
+      </if>
+      <if test="params.loginName != null and '' != params.loginName" >
+        and t.login_name = #{params.loginName,jdbcType=CHAR}
+      </if>
+      <if test="params.pass != null and '' != params.pass" >
+        and t.pass = #{params.pass,jdbcType=CHAR}
+      </if>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user t 
+    where t.id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="selectByParams" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user t 
+    where 1=1
+    <include refid="condition" />
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer" >
+    select count(1) as s from sys_user t  where 1=1
+    <include refid="condition" />
+  </select>
+  <select id="selectByPage" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user t 
+    where 1=1
+    <include refid="condition" />
+    <if test="orderByField != null and ''!=orderByField" >
+      order by t.${orderByField} 
+      <if test="orderByField" >
+        ${orderBy}
+      </if>
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_user
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByPrimarayKeyForModel" parameterType="com.cluster.basedata.model.SysUser" >
+    delete from sys_user
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cluster.basedata.model.SysUser" >
+    insert into sys_user (id, name, login_name, pass
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=CHAR}, #{loginName,jdbcType=CHAR}, #{pass,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cluster.basedata.model.SysUser" >
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="loginName != null" >
+        login_name,
+      </if>
+      <if test="pass != null" >
+        pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="loginName != null" >
+        #{loginName,jdbcType=CHAR},
+      </if>
+      <if test="pass != null" >
+        #{pass,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cluster.basedata.model.SysUser" >
+    update sys_user
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="loginName != null" >
+        login_name = #{loginName,jdbcType=CHAR},
+      </if>
+      <if test="pass != null" >
+        pass = #{pass,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cluster.basedata.model.SysUser" >
+    update sys_user
+    set name = #{name,jdbcType=CHAR},
+      login_name = #{loginName,jdbcType=CHAR},
+      pass = #{pass,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
