@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.cluster.basedata.mapper.SysMenuMapper;
 import com.cluster.basedata.service.SysMenuService;
+import com.cluster.framework.mapper.BaseMapper;
 import com.cluster.framework.service.impl.BaseServiceImpl;
 
 /**
@@ -19,6 +20,11 @@ public class SysMenuServiceImpl extends BaseServiceImpl implements SysMenuServic
 
 	@Resource
     private SysMenuMapper sysMenuMapper;
+
+	@Override
+	public BaseMapper getMapper() {
+		return sysMenuMapper;
+	}
 
 
 }

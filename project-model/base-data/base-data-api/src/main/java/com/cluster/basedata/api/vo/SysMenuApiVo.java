@@ -46,16 +46,7 @@ public class SysMenuApiVo extends BaseEntity{
      * 排序.
      */
     private Integer sort;
-
     
-    public String getHref() {
-		return href;
-	}
-
-	public void setHref(String href) {
-		this.href = href;
-	}
-
 	/**
      * 
      * {@linkplain #code}
@@ -146,6 +137,24 @@ public class SysMenuApiVo extends BaseEntity{
         this.path = path == null ? null : path.trim();
     }
 
+    /**
+     * 
+     * {@linkplain #href}
+     *
+     * @return the value of sys_menu.href
+     */
+    public String getHref() {
+        return href;
+    }
+
+    /**
+     * {@linkplain #href}
+     * @param href the value for sys_menu.href
+     */
+    public void setHref(String href) {
+        this.href = href == null ? null : href.trim();
+    }
+    
     /**
      * 
      * {@linkplain #sort}

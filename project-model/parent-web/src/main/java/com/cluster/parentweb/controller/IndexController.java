@@ -65,7 +65,7 @@ public class IndexController {
 		map.addAttribute("sysMenuList", sysMenuList);
 		
 		
-		return "/index";
+		return "../../index";
 	}
 	
 

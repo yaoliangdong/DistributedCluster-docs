@@ -33,8 +33,19 @@
 		<version>2.5</version>
 		<scope>provided</scope>
 	</dependency>
+	<dependency>
+	  <groupId>com.cluster.parent-web</groupId>
+      <artifactId>parent-web</artifactId>
+  	  <version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   <build>
     <finalName>base-data-web</finalName>
+    <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-antrun-plugin</artifactId>
+		</plugin>
+	</plugins>
   </build>
 </project>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.cluster.basedata.mapper.SysUserMapper;
 import com.cluster.basedata.service.SysUserService;
+import com.cluster.framework.mapper.BaseMapper;
 import com.cluster.framework.service.impl.BaseServiceImpl;
 
 /**
@@ -19,5 +20,10 @@ public class SysUserServiceImpl extends BaseServiceImpl implements SysUserServic
 
     @Resource
     private SysUserMapper sysUserMapper;
+
+	@Override
+	public BaseMapper getMapper() {
+		return sysUserMapper;
+	}
 
 }

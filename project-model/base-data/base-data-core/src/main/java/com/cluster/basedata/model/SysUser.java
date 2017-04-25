@@ -1,12 +1,14 @@
 package com.cluster.basedata.model;
 
+import com.cluster.framework.model.BaseEntity;
+
 /**
  * 
  * @author  liangdong.yao
  * @date    2017-04-07 11:31:41
  * @version 1.0.0
  */
-public class SysUser {
+public class SysUser extends BaseEntity{
 
     private static final long serialVersionUID = 1L;
 

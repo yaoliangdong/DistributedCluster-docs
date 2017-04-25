@@ -4,6 +4,9 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+  	<welcome-file>index.do</welcome-file>  
+  </welcome-file-list>  
   <context-param>  
         <param-name>contextConfigLocation</param-name>  
         <param-value>

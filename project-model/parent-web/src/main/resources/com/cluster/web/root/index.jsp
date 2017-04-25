@@ -21,12 +21,12 @@
 <div style="border:1px solid gray;width:10%;float: left">
 	<c:forEach items="${sysMenuList}" var="var" varStatus="vs">
 	<div class="title">
-		<a href="http://${var.domain }:${var.port }${var.path }${var.href }"><h3>${var.name }</h3></a>
+		<a href="javascript:toPage('http://${var.domain }:${var.port }${var.path }${var.href }')"><h3>${var.name }</h3></a>
 	</div>
 	</c:forEach>
 </div>
 <div style="border:1px solid gray;width:89.79%;float: left">
-
+	<iframe id="page"></iframe>
 </div>
 </body>
 </html>

@@ -18,12 +18,12 @@ import com.cluster.framework.service.BaseService;
  */
 public abstract class BaseServiceImpl implements BaseService{
 
-	private BaseMapper mapper;
+	public abstract BaseMapper getMapper();
 	
 	@Transactional
 	public <T> int deleteById(T entity) throws RuntimeException {
 		try {
-			return mapper.deleteByPrimarayKeyForModel(entity);
+			return getMapper().deleteByPrimarayKeyForModel(entity);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -32,7 +32,7 @@ public abstract class BaseServiceImpl implements BaseService{
 	@Transactional
 	public <T> int add(T entity) throws RuntimeException {
 		try {
-			return mapper.insertSelective(entity);
+			return getMapper().insertSelective(entity);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -40,7 +40,7 @@ public abstract class BaseServiceImpl implements BaseService{
 
 	public <T> T findById(T entity) throws RuntimeException {
 		try {
-			return (T) mapper.selectByPrimaryKey(entity);
+			return (T) getMapper().selectByPrimaryKey(entity);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -49,7 +49,7 @@ public abstract class BaseServiceImpl implements BaseService{
 	@SuppressWarnings("unchecked")
 	public <T> T findById(String id) throws RuntimeException {
 		try {
-			return (T) mapper.selectByPrimaryKey(id);
+			return (T) getMapper().selectByPrimaryKey(id);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -57,7 +57,7 @@ public abstract class BaseServiceImpl implements BaseService{
 	
 	public <T> List<T> findByBiz(Map<String, Object> params) throws RuntimeException {
 		try {
-			return mapper.selectByParams(params);
+			return getMapper().selectByParams(params);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -66,7 +66,7 @@ public abstract class BaseServiceImpl implements BaseService{
 	@Transactional
 	public <T> int modifyById(T entity) throws RuntimeException {
 		try {
-			return mapper.updateByPrimaryKeySelective(entity);
+			return getMapper().updateByPrimaryKeySelective(entity);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
@@ -74,7 +74,7 @@ public abstract class BaseServiceImpl implements BaseService{
 
 	public int findCount(Map<String,Object> params) throws RuntimeException {
 		try {
-			return mapper.selectCount(params);
+			return getMapper().selectCount(params);
 		} catch (Exception e) {
 			throw new RuntimeException("",e);
 		}
