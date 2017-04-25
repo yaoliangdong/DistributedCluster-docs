@@ -27,7 +27,6 @@ public class SysUserController {
 	@Autowired
 	private SysUserService sysUserService;
 	
-	
 	/**
 	 * 用户列表
 	 * @author  liangdong.yao
