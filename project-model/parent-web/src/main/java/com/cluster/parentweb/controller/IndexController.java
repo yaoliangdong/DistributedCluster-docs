@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.jasig.cas.client.authentication.AttributePrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,17 @@ public class IndexController {
 		return "../../index";
 	}
 	
-
+	/**
+	 * 注销登录
+	 * @author  liangdong.yao
+	 * @Date    2017年4月26日 下午3:23:25
+	 * @version 1.0
+	 */
+	@RequestMapping("/logout")
+	public String logout(HttpSession session,String service){
+		//1.注销应用的session 2.注销cas(跳转到cas-server的logout方法) 3.重定向到service参数值地址
+		session.invalidate();
+		return "redirect:https://cas.cluster.com:8060/cas/logout?service="+service;
+	}
 	
 }

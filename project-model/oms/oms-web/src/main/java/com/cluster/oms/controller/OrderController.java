@@ -1,4 +1,4 @@
-package com.cluster.basedata.controller;
+package com.cluster.oms.controller;
 
 import java.util.List;
 
@@ -9,37 +9,40 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cluster.basedata.model.SysUser;
-import com.cluster.basedata.service.SysUserService;
+import com.cluster.oms.api.vo.OrderApiVo;
+import com.cluster.oms.service.OrderService;
+
 
 
 /**
- * 系统用户
- * @className SysUserController.java
+ * 订单信息
+ * @className OrderController.java
  * @author    liangdong.yao
- * @Date      2017年4月25日 下午1:54:27
+ * @Date      2017年4月26日 上午10:24:57
  * @version   1.0
  */
 @Controller
-@RequestMapping("sysUser")
-public class SysUserController {
+@RequestMapping("order")
+public class OrderController {
 	
 	@Autowired
-	private SysUserService sysUserService;
+	private OrderService orderService;
+	
+
 	
 	/**
-	 * 用户列表
+	 * 订单列表
 	 * @author  liangdong.yao
-	 * @Date    2017年4月25日 下午5:04:43
+	 * @Date    2017年4月26日 上午10:25:03
 	 * @version 1.0
 	 */
 	@RequestMapping("list")
 	public String list(HttpServletRequest request,ModelMap map){
 		
-		List<SysUser> list = sysUserService.findByBiz(null);
+		List<OrderApiVo> list = orderService.findByBiz(null);
 		map.addAttribute("list", list);
 		
-		return "sysUser/list";
+		return "order/list";
 	}
 	
 

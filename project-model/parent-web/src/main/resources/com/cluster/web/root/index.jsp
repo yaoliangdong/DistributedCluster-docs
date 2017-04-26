@@ -16,7 +16,12 @@
 </head>
 <body>
 <div style="border:1px solid gray;height:100px;line-height: 100px;">
-	<h1><%=basePath %></h1>
+	<div style="width:50%;float: left">
+		<h1><%=basePath %></h1>
+	</div>
+	<div style="width:50%;float: left;text-align:center;">
+		<h1><a href="javascript:logout('<%=basePath %>')">退出系统</a></h1>
+	</div>	
 </div>
 <div style="border:1px solid gray;width:10%;float: left">
 	<c:forEach items="${sysMenuList}" var="var" varStatus="vs">

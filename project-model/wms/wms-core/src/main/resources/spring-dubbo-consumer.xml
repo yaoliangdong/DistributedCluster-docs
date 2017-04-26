@@ -18,5 +18,7 @@
  
     <!-- 生成远程服务代理，可以和本地bean一样使用sysMenuApiService -->
     <dubbo:reference id="sysMenuApiService" interface="com.cluster.basedata.api.service.SysMenuApiService" />
- 
+    
+    <dubbo:reference id="orderApiService" interface="com.cluster.oms.api.service.OrderApiService" />
+    
 </beans>

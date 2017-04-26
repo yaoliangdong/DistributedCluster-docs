@@ -4,13 +4,13 @@
     xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
     xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     
-    <!-- 系统菜单组件实现类 -->
-    <bean id="sysMenuApiService" class="com.cluster.basedata.api.service.impl.SysMenuApiServiceImpl" />
+    <!-- 订单组件实现类 -->
+    <bean id="orderApiService" class="com.cluster.oms.api.service.impl.OrderApiServiceImpl" />
     <!-- 声明系统菜单组件暴露的服务接口 -->
-    <dubbo:service interface="com.cluster.basedata.api.service.SysMenuApiService" ref="sysMenuApiService" />
+    <dubbo:service interface="com.cluster.oms.api.service.OrderApiService" ref="orderApiService" />
  
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="base-data-app"  />
+    <!-- <dubbo:application name="oms-app"  /> -->
  
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <!-- <dubbo:registry address="zookeeper://192.168.1.167:2181" /> -->
@@ -22,7 +22,7 @@
     <!-- <dubbo:registry address="redis://192.168.1.167:6379" /> -->
  
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880" />
+    <dubbo:protocol name="dubbo" port="20890" />
  
     
  
