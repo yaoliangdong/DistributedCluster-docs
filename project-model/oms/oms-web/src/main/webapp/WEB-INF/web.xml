@@ -14,7 +14,6 @@
         	classpath:applicationContext-redis.xml
         	classpath:spring-dubbo-core.xml
         	classpath:spring-dubbo-consumer.xml
-        	classpath:spring-dubbo-provider.xml
         </param-value>  
    </context-param>
   	

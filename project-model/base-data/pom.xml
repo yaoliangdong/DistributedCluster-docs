@@ -27,5 +27,6 @@
     <module>base-data-core</module>
     <module>base-data-api</module>
     <module>base-data-web</module>
+    <module>base-data-jsw</module>
   </modules>
 </project>
