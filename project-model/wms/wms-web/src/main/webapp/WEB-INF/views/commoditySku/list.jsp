@@ -54,15 +54,19 @@ ul span{
 		<td>${var.name }</td>
 		<td>${var.qty }</td>
 		<td>
-			<a href ="javascript:proOrderByDubbo('${var.id }')">下单<span style="font-size:12px;">(走dubbo)</span></a>
-			<a href ="#">下单<span style="font-size:12px;">(走MQ)</span></a>
+			<a href ="javascript:sendOrderByDubbo('${var.id }')">下单<span style="font-size:12px;">(走dubbo)</span></a>
+			<a href ="javascript:sendOrderByMQ('${var.id }')">下单<span style="font-size:12px;">(走MQ)</span></a>
 		</td>
 	</tr>
 	</c:forEach>
 </table>
 <script type="text/javascript">
-function proOrderByDubbo(id){
-	location.href="proOrderByDubbo.do?id="+id;
+function sendOrderByDubbo(id){
+	location.href="sendOrderByDubbo.do?id="+id;
+}
+
+function sendOrderByMQ(id){
+	location.href="sendOrderByMQ.do?id="+id;
 }
 </script>
 </body>

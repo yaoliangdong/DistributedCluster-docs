@@ -89,6 +89,11 @@
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
 		</dependency>
+		<!-- Rabbit MQ -->
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit</artifactId>
+		</dependency>
 		
 		<dependency>
 	      <groupId>com.cluster.base-data.api</groupId>

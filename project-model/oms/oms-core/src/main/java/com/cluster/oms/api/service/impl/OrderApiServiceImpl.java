@@ -23,11 +23,11 @@ public class OrderApiServiceImpl implements OrderApiService{
 	@Autowired
 	private OrderMapper orderMapper;
 
-	public ResultDto<String> insert(OrderApiVo order) {
+	public ResultDto<String> sendOrder(OrderApiVo orderApiVo) {
 		ResultDto<String> dto = null;
 		try {
 			dto = new ResultDto<String>();
-			orderMapper.insert(order);
+			orderMapper.insert(orderApiVo);
 			dto.setCode(ResultDto.OK_CODE);
 			dto.setData("成功");
 		} catch (Exception e) {

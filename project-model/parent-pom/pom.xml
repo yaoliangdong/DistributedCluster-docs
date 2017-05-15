@@ -24,6 +24,7 @@
 	<zkclient.version>0.4</zkclient.version>
 	<jstl.version>1.2</jstl.version>
 	<standard.version>1.1.2</standard.version>
+	<spring.amqp.version>1.5.5.RELEASE</spring.amqp.version>
 	
 	<maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
 	<maven.assembly.plugin.version>2.5.4</maven.assembly.plugin.version>
@@ -158,6 +159,12 @@
 			    <groupId>taglibs</groupId>
 			    <artifactId>standard</artifactId>
 			    <version>${standard.version}</version>
+			</dependency>
+			<!-- Rabbit MQ -->
+			<dependency>
+				<groupId>org.springframework.amqp</groupId>
+				<artifactId>spring-rabbit</artifactId>
+				<version>${spring.amqp.version}</version>
 			</dependency>
 			<!-- <dependency>
 				<groupId>org.springframework</groupId>

@@ -32,5 +32,10 @@
   	  <artifactId>oms-api</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.cluster.wms.api</groupId>
+  	  <artifactId>wms-api</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 </project>

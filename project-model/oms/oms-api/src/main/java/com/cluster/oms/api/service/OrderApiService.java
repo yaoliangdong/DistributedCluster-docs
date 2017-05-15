@@ -21,6 +21,6 @@ public interface OrderApiService {
 	 * @Date    2017年4月26日 下午1:43:14
 	 * @version 1.0
 	 */
-	public ResultDto<String> insert(OrderApiVo order);
+	public ResultDto<String> sendOrder(OrderApiVo orderApiVo);
     
 }

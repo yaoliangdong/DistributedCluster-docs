@@ -18,7 +18,7 @@ public interface CommoditySkuService extends BaseService {
 	 * @Date    2017年4月26日 上午11:27:21
 	 * @version 1.0
 	 */
-	public ResultDto<String> proOrderByDubbo(String id,String userId);
+	public ResultDto<String> sendOrderByDubbo(String id,String userId);
 	
 	/**
 	 * 下单 走MQ中间件
@@ -26,5 +26,5 @@ public interface CommoditySkuService extends BaseService {
 	 * @Date    2017年4月26日 上午11:27:23
 	 * @version 1.0
 	 */
-	public ResultDto<String> proOrderByMQ(String id,String userId);
+	public ResultDto<String> sendOrderByMQ(String id,String userId);
 }

@@ -14,6 +14,8 @@
         	classpath:applicationContext-redis.xml
         	classpath:spring-dubbo-core.xml
         	classpath:spring-dubbo-consumer.xml
+        	classpath:applicationContext-rabbitmq-core.xml
+        	classpath:applicationContext-rabbitmq-consumer.xml
         </param-value>  
    </context-param>
   	
